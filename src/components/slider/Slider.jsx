@@ -1,49 +1,49 @@
 import React, {useState} from 'react';
 import banner1 from '../../assets/banner1.svg';
 import banner2 from '../../assets/banner2.svg';
-import banner3 from '../../assets/banner1.svg';
-import banner4 from '../../assets/banner2.svg';
+import banner3 from '../../assets/banner3.svg';
+import banner4 from '../../assets/banner4.svg';
 import Slide from "./slide/Slide.jsx";
 
 const initialItemsState = [
     {
         id: 1,
-        background: banner1,
-        title: 'Spring Collection',
+        background: banner4,
+        title: 'Подарки для него',
         subtitle: '-30%',
         button: {
             url: '/',
-            text: 'для него'
+            text: 'перейти'
         }
     },
     {
         id: 2,
+        background: banner3,
+        title: 'Лучшее детям',
+        subtitle: '-70%',
+        button: {
+            url: '/',
+            text: 'в приложении'
+        }
+    },
+    {
+        id: 3,
         background: banner2,
-        title: 'Spring Style',
-        subtitle: '-25%',
+        title: 'Коллекция 2023',
+        subtitle: '-45%',
         button: {
             url: '/',
             text: 'для нее'
         }
     },
     {
-        id: 3,
-        background: banner3,
-        title: 'Spring Collection',
-        subtitle: '-30%',
-        button: {
-            url: '/',
-            text: 'для него'
-        }
-    },
-    {
         id: 4,
-        background: banner4,
-        title: 'Spring Collection',
-        subtitle: '-30%',
+        background: banner1,
+        title: 'Скидка на вторую вещь',
+        subtitle: '50%',
         button: {
             url: '/',
-            text: 'для него'
+            text: 'смотреть'
         }
     },
 ]
