@@ -439,3 +439,106 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+footer {
+  background-color: #111111;
+  padding: 40px 0;
+  margin-top: 100px;
+
+  .footer__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 120px;
+    align-items: baseline;
+  }
+
+
+  .company__column {
+    display: flex;
+    flex-direction: column;
+    color: #a2a2a2;
+    width: 293px;
+    gap: 30px;
+
+    .social {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+
+      i {
+        --size: 30px;
+        font-size: var(--size);
+        cursor: pointer;
+      }
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #FFFFFF;
+      gap: 10px;
+
+      .number {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span {
+          color: #A2A2A2;
+        }
+      }
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      width: 133px;
+      gap: 15px;
+
+      h1 {
+        color: #FF6E56;
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 102.7%;
+        color: #FF6E56;
+        text-transform: uppercase;
+
+        span {
+          color: #FFC261;
+        }
+      }
+    }
+  }
+
+  .nav__column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+
+    h4 {
+      color: #fff;
+      font-weight: 400;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color: #A2A2A2;
+    }
+  }
+}
+
