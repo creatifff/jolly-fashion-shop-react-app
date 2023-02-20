@@ -1,6 +1,22 @@
-import React from 'react';
+import {useContext} from 'react';
 import {NavLink} from "react-router-dom";
 import logo from '../../assets/logo-jolly.svg';
+import formatNumber from "../../utils/formatNumber.js";
+import cartTotal from "../../utils/cartTotal.js";
+import {CartContext, ModalContext} from "../../pages/Root.jsx";
+
+const CartButton = () => {
+    const {toggleModal} = useContext(ModalContext);
+    const {cartItems} = useContext(CartContext);
+    const total = cartTotal(cartItems);
+
+    return (
+        <button onClick={toggleModal}>
+            <span>{formatNumber(total)}</span>
+            <i className="fa-solid fa-cart-shopping"></i>
+        </button>
+    )
+}
 
 const Header = () => {
     return (
@@ -32,10 +48,7 @@ const Header = () => {
                     </nav>
 
                     <div className="buttons">
-                        <button>
-                            <span>2999 руб.</span>
-                            <i className="fa-solid fa-cart-shopping"></i>
-                        </button>
+                        <CartButton/>
                         <NavLink to="/orders">
                             <i className="fa-solid fa-user"></i>
                         </NavLink>

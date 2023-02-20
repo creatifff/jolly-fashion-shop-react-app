@@ -2,9 +2,7 @@ import React from 'react';
 
 const OrdersPage = () => {
     return (
-        <div>
-            Orders
-        </div>
+            <h1>Orders page</h1>
     );
 };
 

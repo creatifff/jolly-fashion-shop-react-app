@@ -238,6 +238,7 @@ h1, h2, h3, h4, h5, h6 {
       text-align: center;
       color: #A2A2A2;
       align-self: center;
+      grid-column: 2 / 4;
     }
 
     .product {
@@ -538,6 +539,142 @@ footer {
       flex-direction: column;
       gap: 20px;
       color: #A2A2A2;
+    }
+  }
+}
+
+// Cart modal CSS
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .modal {
+    position: absolute;
+    display: grid;
+    grid-template-rows: 0.25fr 4.75fr 1fr;
+    gap: 30px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 385px;
+    width: 100%;
+    padding: 32px 30px 30px 30px;
+    background-color: #fff;
+
+    &-header {
+      h2 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 44px;
+        color: #000000;
+      }
+    }
+
+    &-body {
+      overflow-y: scroll;
+
+      .cart-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .cart-item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          button {
+            --size: 32px;
+            width: var(--size);
+            height: var(--size);
+            cursor: pointer;
+            outline: none;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #A2A2A2;
+            border-radius: 20px;
+            padding: 3px;
+          }
+
+          img {
+            max-width: 114px;
+            max-height: 158px;
+            min-height: 158px;
+            min-width: 114px;
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .total {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        .row {
+          flex-direction: row;
+          display: flex;
+          justify-content: space-between;
+          font-size: 16px;
+          line-height: 19px;
+          color: #000000;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+
+          span {
+            min-width: max-content;
+          }
+
+          .text {
+            font-weight: 400;
+          }
+
+          .price {
+            font-weight: 600;
+          }
+
+
+        }
+      }
+
+      button {
+        border: none;
+        outline: none;
+        background-color: #FF6E56;
+        color: white;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+        padding: 12px 0;
+        cursor: pointer;
+      }
     }
   }
 }

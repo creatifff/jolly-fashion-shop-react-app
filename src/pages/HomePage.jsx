@@ -33,7 +33,8 @@ const HomePage = () => {
                             <input value={query}
                                    onChange={(e) => onChangeQuery(e)}
                                    type="text"
-                                   placeholder="Поиск по названию..."/>
+                                   placeholder="Поиск по названию..."
+                            />
                         </div>
                     </header>
 
@@ -41,7 +42,7 @@ const HomePage = () => {
                         {
                             filteredProducts.length ? filteredProducts.map((product) => {
                                 return <Product key={product.id} product={product}/>
-                            }) : <h2>По вашему запросу ничего не найдено</h2>
+                            }) : <h2>По запросу "{query}" ничего не найдено</h2>
                         }
                     </div>
 
