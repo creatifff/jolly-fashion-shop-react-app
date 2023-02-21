@@ -3,6 +3,7 @@ import {CartContext, ModalContext} from "../../pages/Root.jsx";
 import cartTotal from "../../utils/cartTotal.js";
 import CartItem from "../cartItem/CartItem.jsx";
 import formatNumber from "../../utils/formatNumber.js";
+import calcDiscount from "../../utils/calcDiscount.js";
 
 const CartModal = () => {
     const { isModalActive, toggleModal } = useContext(ModalContext);
@@ -11,6 +12,7 @@ const CartModal = () => {
     const overlayRef = useRef();
 
     const total = cartTotal(cart.cartItems);
+    const totalDiscount = calcDiscount(total, 20);
 
     const closeModal = (e) => {
         if (e.target === overlayRef.current) {
@@ -57,7 +59,7 @@ const CartModal = () => {
                         </div>
                         <div className="row">
                             <span>Скидка 20%:</span>
-                            <span className="price">1234</span>
+                            <span className="price">{formatNumber(totalDiscount)}</span>
                         </div>
                     </div>
                     <button>Оформить заказ</button>
